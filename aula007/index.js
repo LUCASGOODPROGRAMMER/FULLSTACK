@@ -1,15 +1,21 @@
-/** constantes
- * variável que não pode ser modificada;
- * variável que tem de ser inicializada e atribuida um valor imediatamente
- */
-// const numero;
-const nome = "lucas";
+/*
+    Luiz Otávio Miranda tem 30 anos, pesa 84 kg
+    tem 1.8 de altura e seu IMC é de 25.925925925925924
+    Luiz Otávio nasceu em 1980
+    */
+const nome = "Luiz Otávio";
+const sobrenome = "Miranda";
+const idade = 30;
+const peso = 84;
+const alturaEmM = 1.8; // Corrigido para metros (ao invés de cm)
+let indiceMassaCorporal; // peso / (altura * altura)
+let anoNascimento;
 
-const primeiroNumero = 5;
-const segundoNumero = 10;
-const resultado = primeiroNumero * segundoNumero;
-const resultadoDuplicado = resultado * 2;
-let resultadoTriplicado = resultado * 3;
-resultadoTriplicado = resultadoTriplicado + 5;
-console.log(resultadoTriplicado);
-console.log(typeof Number);
+indiceMassaCorporal = peso / (alturaEmM * alturaEmM);
+anoNascimento = 2019 - idade;
+
+// template strings
+
+console.log(`${nome} ${sobrenome} tem ${idade} anos, pesa ${peso} kg`);
+console.log(`tem ${alturaEmM} de altura e seu IMC é de ${indiceMassaCorporal}`);
+console.log(`${nome} nasceu em ${anoNascimento}.`);
