@@ -1,0 +1,76 @@
+:root {
+  --primary-color: rgb(196, 197, 255);
+} /* variável global*/
+
+/* estilo global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+
+/* corpo principal */
+body {
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 2rem;
+}
+.container{
+  display: flex;
+  padding: 25px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #9b6cc1, #c996cc);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Container do formulário */
+.container-formulario {
+  flex-direction: column;
+  gap: 15px;
+  width: 320px;
+  margin: 40px auto;
+}
+
+.container-formulario #user-perfil {
+  height: 150px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 1rem;
+  background-image: url("https://i.pinimg.com/originals/d2/9e/b1/d29eb1d63c7642d03069659d275d97bb.gif");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/* Inputs */
+.container-formulario input {
+  padding: 12px 14px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f8f4fb;
+  font-size: 14px;
+  color: #4b2e5a;
+  outline: none;
+  transition: 0.3s ease-in-out;
+}
+
+/* Placeholder */
+.container-formulario input::placeholder {
+  color: #9b7ebd;
+  font-size: 13px;
+}
+
+/* Foco */
+.container-formulario input:focus {
+  background-color: #fff;
+  border: 2px solid #9d6bc9;
+  box-shadow: 0 0 6px rgba(157, 107, 201, 0.6);
+  transform: scale(1.02);
+}
