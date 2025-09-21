@@ -23,16 +23,15 @@ const setDay = () => {
   let indexGenerated;
   do {
     indexGenerated = generatedRandomNumber(6);
-  } while (spanDay.textContent === days[indexGenerated]);
+  } while (spanDay.textContent.toLowerCase() === days[indexGenerated]);
 
   spanDay.textContent = days[indexGenerated].toUpperCase();
 };
 
 const generatedMessage = () => {
   const clean = document.querySelector("#container-message");
-  if (clean) {
-    clean.remove();
-  }
+  if (clean) clean.remove();
+
   const div = document.createElement("div");
   div.id = "container-message";
 
@@ -49,40 +48,18 @@ const generatedMessage = () => {
     "Domingo: planeje sua semana e cuide do seu descanso!",
   ];
 
-  let message;
+  const days = [
+    "segunda",
+    "terça",
+    "quarta",
+    "quinta",
+    "sexta",
+    "sábado",
+    "domingo",
+  ];
 
-  switch (spanDay.textContent.toLowerCase()) {
-    case "segunda": {
-      message = mensagens[0];
-      break;
-    }
-    case "terça": {
-      message = mensagens[1];
-      break;
-    }
-    case "quarta": {
-      message = mensagens[2];
-      break;
-    }
-    case "quinta": {
-      message = mensagens[3];
-      break;
-    }
-    case "sexta": {
-      message = mensagens[4];
-      break;
-    }
-    case "sábado": {
-      message = mensagens[5];
-      break;
-    }
-    case "domingo": {
-      message = mensagens[6];
-      break;
-    }
-  }
-
-  p.textContent = message;
+  const index = days.indexOf(spanDay.textContent.toLowerCase());
+  p.textContent = mensagens[index];
 
   div.appendChild(p);
   body.appendChild(div);
