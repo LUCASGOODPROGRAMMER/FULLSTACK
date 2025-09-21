@@ -1,0 +1,107 @@
+/* Reset simples */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Botões principais */
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 15px 25px;
+  margin: 10px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+/* Botão de gerar frase */
+#btn-generate {
+  background: #ff7eb3;
+  color: #fff;
+  box-shadow: 0px 4px 10px rgba(255, 126, 179, 0.5);
+}
+
+#btn-generate:hover {
+  background: #ff5c9e;
+  transform: scale(1.05);
+}
+
+/* Botão de mudar o dia */
+#set-day {
+  background: #00c9a7;
+  box-shadow: 0px 4px 10px rgba(0, 201, 167, 0.5);
+  padding: 10px;
+  border-radius: 50%;
+  display: inline-flex;
+}
+
+#set-day img {
+  width: 35px;
+  height: 35px;
+}
+
+#set-day:hover {
+  background: #00a98d;
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* Mensagem exibida */
+#container-message {
+  margin-top: 30px;
+  max-width: 500px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.6s ease;
+}
+
+#message {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Animação */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 500px) {
+  #btn-generate {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  #container-message {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}
