@@ -1,0 +1,82 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+/* Centralizar o card */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1d3557, #457b9d);
+  color: #f1faee;
+}
+
+/* Card do timer */
+#card-timer {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  width: 280px;
+}
+
+/* Título */
+#card-timer h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #e63946;
+  letter-spacing: 1px;
+}
+
+/* Display do tempo */
+#card-timer p {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  transition: color .4s ease-in;
+}
+
+/* Container dos botões */
+#options-timer {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+/* Estilo dos botões */
+.btn-option {
+  flex: 1;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: transform 0.2s ease, background 0.3s ease;
+  color: #fff;
+}
+
+/* Cores específicas */
+#btn-play {
+  background: #06d6a0;
+}
+#btn-stop {
+  background: #ffb703;
+}
+#btn-reset {
+  background: #e63946;
+}
+
+/* Efeito hover */
+.btn-option:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
