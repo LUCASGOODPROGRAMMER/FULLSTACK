@@ -21,8 +21,8 @@ executaFuncao(souUmDado);
 
 // Arrow function
 const arrowFunction = () => {
-console.log('Sou uma arrow function')
-}
+  console.log("Sou uma arrow function");
+};
 
 arrowFunction();
 
@@ -33,8 +33,8 @@ arrowFunction();
 
 // Dentro de um objeto
 const obj = {
-    falar() {
-        console.log('Estou falando...')
-    }
-}
-obj.falar()
+  falar() {
+    console.log("Estou falando...");
+  },
+};
+obj.falar();
