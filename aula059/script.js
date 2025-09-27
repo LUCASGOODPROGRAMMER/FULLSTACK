@@ -14,8 +14,8 @@ function Calculadora() {
   };
 
   const pressEnter = () => {
-    display.addEventListener("keyup", (e) => {
-      if (e.keyCode === 13) {
+    document.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
         makeAccount();
       }
     });
@@ -25,22 +25,26 @@ function Calculadora() {
     let account = display.value;
 
     try {
-      account = eval(account);
-      if (!account) {
+      account = Function(`return ${account}`)(); // mais seguro que eval
+      if (account === undefined || isNaN(account)) {
         display.value = ":(";
         return;
       }
 
-      display.value = String(account.toFixed(2));
+      // Se tiver decimal, mostra com 2 casas, senão mostra inteiro
+      display.value = Number.isInteger(account)
+        ? String(account)
+        : String(account.toFixed(2));
     } catch (error) {
       display.value = "ops";
     }
   };
+
   const handleClick = () => {
     document.addEventListener("click", (e) => {
       const el = e.target;
       if (el.classList.contains("btn-num")) {
-        btnStopDisplay(el.innerText); 
+        btnStopDisplay(el.innerText);
       }
       if (el.classList.contains("btn-clear")) {
         clearDisplay();
@@ -51,7 +55,8 @@ function Calculadora() {
       if (el.classList.contains("btn-eq")) {
         makeAccount();
       }
-    }); 
+      display.focus();
+    });
   };
 
   this.init = function () {
