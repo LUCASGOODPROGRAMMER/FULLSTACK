@@ -1,0 +1,143 @@
+// ============================================================================
+// 🧠 FUNÇÃO CONSTRUTORA, INSTÂNCIAS E PROTÓTIPOS EM JAVASCRIPT
+// ============================================================================
+
+/*
+Uma função construtora é usada como um "molde" para criar vários objetos
+(instâncias) de forma rápida e padronizada. Ela serve basicamente como uma classe
+em outras linguagens, e é usada junto com a palavra-chave "new".
+
+Exemplo básico:
+--------------------------------------------------
+function Pessoa(name, surname) {
+    this.nome = name
+    this.sobrenome = surname
+}
+
+const person1 = new Pessoa("Lucas", "Hubner")
+const person2 = new Pessoa("Keynner", "Savi")
+--------------------------------------------------
+
+Quando usamos "new Pessoa()", o motor do JavaScript faz internamente:
+1. Cria um novo objeto vazio: {}
+2. Liga o "this" da função ao novo objeto
+3. Define o protótipo do novo objeto como Pessoa.prototype
+4. Retorna o objeto automaticamente
+*/
+
+/*
+===============================================================================
+📦 INSTÂNCIAS E PROPRIEDADES INDIVIDUAIS
+===============================================================================
+Cada vez que usamos "new Pessoa()", uma nova instância é criada.
+Cada instância tem suas próprias propriedades (nome e sobrenome),
+que são únicas para aquele objeto específico.
+*/
+
+/*
+===============================================================================
+⚙️ PROTÓTIPO (prototype) E CADEIA DE PROTÓTIPOS
+===============================================================================
+O JavaScript é baseado em protótipos. Isso significa que cada função construtora
+tem uma propriedade chamada "prototype", que é usada como modelo (ou molde)
+para todas as instâncias criadas a partir dela.
+
+Quando criamos uma instância:
+--------------------------------------------------
+const person1 = new Pessoa("Lucas", "Hubner")
+--------------------------------------------------
+O motor do JavaScript faz esta ligação:
+--------------------------------------------------
+person1.__proto__ === Pessoa.prototype // true
+--------------------------------------------------
+
+Ou seja:
+person1 (instância) → Pessoa.prototype → Object.prototype → null
+Essa é a chamada "cadeia de protótipos" (prototype chain).
+*/
+
+/*
+===============================================================================
+🧱 ADICIONANDO MÉTODOS AO PROTÓTIPO
+===============================================================================
+Em vez de criar métodos dentro da função construtora (o que recriaria o método
+toda vez que uma nova instância é criada), é mais eficiente adicionar os métodos
+ao prototype da função construtora.
+
+Exemplo:
+--------------------------------------------------
+Pessoa.prototype.nomeCompleto = function() {
+    return `Prazer, me chamo ${this.nome} ${this.sobrenome}`
+}
+--------------------------------------------------
+
+Assim, todas as instâncias de Pessoa podem usar esse método sem duplicação.
+Isso economiza memória e torna o código mais otimizado.
+
+O motor do JS, ao buscar um método, faz o seguinte:
+1. Procura dentro do próprio objeto (ex: person1.nomeCompleto)
+2. Se não encontrar, procura no protótipo (Pessoa.prototype)
+3. Se ainda não encontrar, sobe até Object.prototype
+4. E, se não houver mais nada, retorna undefined
+*/
+
+/*
+===============================================================================
+🧩 PROTOTYPE VS __proto__
+===============================================================================
+- Pessoa.prototype → pertence à função construtora (é o modelo usado pelas instâncias)
+- person1.__proto__ → pertence à instância e aponta para Pessoa.prototype
+
+Então:
+--------------------------------------------------
+Pessoa.prototype === person1.__proto__ // true
+--------------------------------------------------
+
+A propriedade "__proto__" é apenas uma forma de acessar o protótipo interno de
+um objeto. O jeito moderno e recomendado é usar:
+--------------------------------------------------
+Object.getPrototypeOf(person1)
+--------------------------------------------------
+*/
+
+/*
+===============================================================================
+📘 EXEMPLO COMPLETO
+===============================================================================
+
+function Pessoa(name, surname) {
+    this.nome = name
+    this.sobrenome = surname
+}
+
+Pessoa.prototype.nomeCompleto = function() {
+    return `Prazer, me chamo ${this.nome} ${this.sobrenome}`
+}
+
+Pessoa.prototype.getAge = function(anoNascimento) {
+    const anoAtual = new Date().getFullYear()
+    return anoAtual - anoNascimento
+}
+
+const person1 = new Pessoa("Lucas", "Hubner")
+const person2 = new Pessoa("Keynner", "Savi")
+
+console.log(person1.nomeCompleto())
+console.log(person1.getAge(2007))
+*/
+
+/*
+===============================================================================
+🎓 RESUMO FINAL
+===============================================================================
+- "function Pessoa() {}" é uma função construtora (molde de criação)
+- "new Pessoa()" cria uma nova instância (objeto baseado no molde)
+- "Pessoa.prototype" é o modelo compartilhado entre todas as instâncias
+- "person1.__proto__" aponta para "Pessoa.prototype"
+- Métodos no "prototype" são mais eficientes pois são reutilizados
+- A busca por propriedades e métodos segue a cadeia:
+  objeto → prototype → Object.prototype → null
+- A sintaxe moderna com "class" faz exatamente a mesma coisa por baixo dos panos
+*/
+
+// ============================================================================
