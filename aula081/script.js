@@ -44,7 +44,7 @@ function People2(name, surname) {
 
 People2.prototype.falar = function () {
   console.log(`${this.name} está falando`);
-}; // outra de adicionar método no proto
+}; // outra de adicionar método no protof
 
 const p12 = new People2("lucas", "hubner");
 console.log(p1,p12)
