@@ -75,3 +75,5 @@ function loadResult(response) {
   const result = document.querySelector(".result"); // seleciona a div onde o conteúdo será exibido
   result.innerHTML = response; // insere o conteúdo HTML retornado pela requisição
 }
+
+
