@@ -1,0 +1,26 @@
+[
+  {
+    "nome": "Lucas",
+    "idade": 20,
+    "cidade": "Ji-Paraná",
+    "profissao": "Desenvolvedor Front-End"
+  },
+  {
+    "nome": "Maria",
+    "idade": 25,
+    "cidade": "Porto Velho",
+    "profissao": "Designer"
+  },
+  {
+    "nome": "João",
+    "idade": 30,
+    "cidade": "São Paulo",
+    "profissao": "Analista de Sistemas"
+  },
+  {
+    "nome": "Ana",
+    "idade": 22,
+    "cidade": "Curitiba",
+    "profissao": "Estudante"
+  }
+]
