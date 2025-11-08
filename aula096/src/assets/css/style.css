@@ -1,0 +1,9 @@
+.container {
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem 4rem;
+    border: 2px solid purple;
+    font-size: 2em;
+}
