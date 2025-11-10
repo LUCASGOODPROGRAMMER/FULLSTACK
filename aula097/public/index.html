@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de Senhas</title>
+  </head>
+  <body>
+    <section class="container">
+      <h1>Gerador de senhas</h1>
+
+      <div class="group-inputs">
+        <label for="characters">Quantidade de caracteres</label>
+        <input
+          value="6"
+          type="text"
+          id="txt-characters"
+          placeholder="6/30 caracteres"
+          maxlength="2"
+        />
+
+        <div class="fill-box">
+          <label for="numbers">Números</label>
+          <input type="checkbox" id="cb-numbers" />
+        </div>
+
+        <div class="fill-box">
+          <label for="lowercase-letters">Letras minúsculas</label>
+          <input type="checkbox" id="cb-lowercase-letters" />
+        </div>
+
+        <div class="fill-box">
+          <label for="capital-letters">Letras maiúsculas</label>
+          <input type="checkbox" id="cb-capital-letters" />
+        </div>
+
+        <div class="fill-box">
+          <label for="symbols">Símbolos</label>
+          <input type="checkbox" id="cb-symbols" />
+        </div>
+
+        <button class="btn">gerar</button>
+      </div>
+
+      <p class="generated-password"></p>
+    </section>
+
+    <script src="./assets/js/bundle.js"></script>
+  </body>
+</html>
+
+<!-- cb -> checkbox -->

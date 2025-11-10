@@ -1,0 +1,107 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Corpo centralizado */
+body {
+  background: linear-gradient(135deg, #1e1f29, #34354a);
+  color: #f3f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Container principal */
+.container {
+  background-color: #2a2b3d;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  width: 350px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: scale(1.02);
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #00c896;
+}
+
+/* Grupo de inputs */
+.group-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: start;
+  font-size: 1.5rem;
+}
+
+.group-inputs .fill-box {
+  gap: 0.8rem;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* Labels */
+.group-inputs .fill-box label {
+  color: #d1d1d1;
+}
+
+/* Inputs */
+input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  background-color: #3a3b4f;
+  color: #fff;
+}
+
+input[type="checkbox"] {
+  accent-color: #00c896;
+  transform: scale(1.2);
+}
+
+/* Efeito visual ao passar o mouse */
+input[type="text"]:focus {
+  border: 1px solid #00c896;
+  background-color: #40415a;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  background-color: #00c896;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  border: none;
+  color: #3a3b4f;
+  font-weight: 1000;
+  cursor: pointer;
+}
+
+.generated-password {
+  display: none;
+  padding: 1rem 2rem;
+  background-color: #00c896;
+  border-radius: 5px;
+  border: none;
+  color: #3a3b4f;
+  font-weight: 1000;
+  margin-top: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  justify-self: center;
+}
