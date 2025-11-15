@@ -1,0 +1,23 @@
+npm init -y
+npm i <nome do pacote> ...
+npm i express
+npm i <pacote> -E // para nunca ser atualizado
+npm update // para atualizar pacotes
+npm  i <pacote> --save-dev // save dev para colocar como pendências de desenvolvimento
+npm i <pacote> --save-prod // save-prod é usado para pendências necessária para funcionar o projeto
+npm i <nome do pacote>@<versão específica> 
+npm uninstall <nome do pacote a ser desinstalado>
+npm ls // vai listar os pacotes instalados
+npm ls --depth=0 // vai listar somente o que eu instalei, eu posso aumentar a profundidade de dessa lista: --depth=1...
+
+npm outdated // pare ver pacotes desatualizados
+
+"express": "^5.1.0" -> MAJOR.MINOR.PATCH
+
+O número da versão MAJOR é incrementado quando há mudanças incompatíveis com versões anteriores. Ou seja, se você atualizar de uma versão 4.x.x para uma versão 5.x.x, é possível que o comportamento do pacote mude de forma que quebre a compatibilidade com o que você estava usando antes. Atualizações MAJOR geralmente indicam que o pacote passou por mudanças significativas ou quebra de funcionalidades.
+
+O número da versão MINOR é incrementado quando há adição de novos recursos, mas de forma compatível com versões anteriores. Ou seja, se você atualizar de uma versão 5.0.x para 5.1.x, os novos recursos estarão disponíveis sem que você precise mudar seu código, desde que esteja usando a versão anterior corretamente.
+
+O número da versão PATCH é incrementado quando são feitas correções de bugs ou ajustes menores que não afetam a funcionalidade do pacote. Normalmente, atualizações PATCH corrigem problemas de estabilidade ou segurança sem mudar nada na API ou nos recursos principais do pacote. Isso pode incluir pequenos ajustes, como correções de erros ou melhorias de desempenho.
+
+O símbolo ^ é usado para definir a versão que o pacote pode atualizar dentro de uma faixa de versões compatíveis. Quando você vê algo como ^5.1.0, isso significa que qualquer versão 5.x.x (com x >= 1), mas menor que 6.0.0, pode ser instalada sem que o código que usa esse pacote quebre. Ou seja, essa versão aceita atualizações menores e de correção, mas não maiores, para garantir que mudanças incompatíveis (como mudanças no número MAJOR) não aconteçam.
